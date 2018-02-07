@@ -1,2 +1,5 @@
 # markdown-notes
-**Test** de la page de présentation et d'index de mes *fiches de notes* sur les installations/configuration/utilisation de logiciel.
+
+## Présentation
+Ce projet contient mes fiches de notes *personnelles* sur les installations/configuration/utilisation de logiciel.
+La gestion des droits unix est rarement abordée dans les fiches car ce n'est pas le sujet principal de la fiche.
