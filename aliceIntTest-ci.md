@@ -32,18 +32,19 @@ Rien de particulier
 
 ### Build
 1. Le build comporte un script shell pour la récupération de l'image docker générée par la CI de build d'Alice et le lancement du container basé sur celle-ci.
-![build shell docker](https://github.com/ildrasa/markdown-notes/blob/master/images/aliceIntTest-ci/aliceIntTest-ci_docker)
+![shell docker start](https://github.com/ildrasa/markdown-notes/blob/master/images/aliceIntTest-ci/aliceIntTest-ci_docker)
 
 2. Le build comporte une invocation maven.
 Remarques: 
   - L'option Dmaven.test.failure.ignore=true sert à ne pas arrêter la CI si les tests ne passent pas. Ce qui empêcherai l'arrêt et le nettoyage du container docker et empêcherai le bon dérouloulement des prochaine itération de la CI.
 ![build maven](https://github.com/ildrasa/markdown-notes/blob/master/images/aliceIntTest-ci/aliceIntTest-ci_maven)
 
-### Actions post build
-1. Utilisation d'un script shell pour l'arrêt et la suppression du container docker faisant tourner Alice pour les tests d'intégration.
-![tomcat deploy](https://github.com/ildrasa/markdown-notes/blob/master/images/aliceIntTest-ci/aliceIntTest-ci_dockerStop)
+3. Utilisation d'un script shell pour l'arrêt et la suppression du container docker faisant tourner Alice pour les tests d'intégration.
+![shell docker stop](https://github.com/ildrasa/markdown-notes/blob/master/images/aliceIntTest-ci/aliceIntTest-ci_dockerStop)
 
-2. On regarde le contenu de la console de sortie pour passer le build en instable (jaune) si les tests on échoués. Pour cela on cherche la ligne `[ERROR] There are test failures.`
+
+### Actions post build
+On regarde le contenu de la console de sortie pour passer le build en instable (jaune) si les tests on échoués. Pour cela on cherche la ligne `[ERROR] There are test failures.`
 ![build jenkins text finder](https://github.com/ildrasa/markdown-notes/blob/master/images/aliceIntTest-ci/aliceIntTest-ci_textFinder)
 
 
