@@ -27,6 +27,8 @@ HTTP_PORT = 8081
 - ruby-runtime
 - TextFinder plugin
 - GitHub plugin
+- Pipeline Maven Integration Plugin
+- Convert to Pipeline
 
 5. Rajouter le fichier de configuration MySettings pour référencer les serveurs pour maven (Administrer Jenkins > Configuration files)
 ```xml
