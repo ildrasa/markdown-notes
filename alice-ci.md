@@ -17,15 +17,15 @@ Dans le projet alice, un test échoue; l'objectif est de faire jouer plus tard l
 ## Configuration
 
 ### General
-![onglet general](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci_general)
+![onglet general](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci/alice-ci_general)
 
 ### Gestion des sources
 La source est le repository GitHub d'Alice
-![onglet gestion des sources](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci_sources)
+![onglet gestion des sources](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci/alice-ci_sources)
 
 ### Déclenchement du build
 Le build est déclenché si on a commité sur le repo GitHub dans les 5 dernières minutes.
-![onglet déclenchement du build](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci_declenchement)
+![onglet déclenchement du build](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci/alice-ci_declenchement)
 
 ### Environnement de build
 Rien de particulier
@@ -35,20 +35,20 @@ Rien de particulier
 Remarques: 
   - Comme le plugin nexus pour jenkins ne fonctionne pas avec nexus 3.x c'est la tâche deploy de maven qui envoie le war généré sur le nexus.
   - L'option Dmaven.test.failure.ignore=true sert à ne pas arrêter la CI si les tests ne passent pas. Ce qui mettrai la CI broken, ce qui n'est pas le cas, l'appli est *fonctionnelle* mais instable... ou le test est juste incorrect, ça se serai déjà vu... 
-![build maven](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci_maven)
+![build maven](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci/alice-ci_maven)
 
 2. Le build comporte un script shell pour l'image docker qui servira aux tests d'intégration.
-![build shell docker](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci_docker)
+![build shell docker](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci/alice-ci_docker)
 
 ### Actions post build
 1. Déploiement du war sur le serveur tomcat de démonstration
-![tomcat deploy](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci_tomcat)
+![tomcat deploy](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci/alice-ci_tomcat)
 
 2. On regarde le contenu de la console de sortie pour passer le build en instable (jaune) si les tests on échoués. Pour cela on cherche la ligne `[ERROR] There are test failures.`
-![build jenkins text finder](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci_textFinder)
+![build jenkins text finder](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci/alice-ci_textFinder)
 
 3. On lance la CI de tests d'intégration d'Alice. On la lance même si le build est instable (un test unitaire raté n'empêche pas de tester l'intégration avec les autres composants). Différence entre le métier interne et l'interraction avec l'environnement.
-![déclenchement CI de tests d'intégration](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci_lancementSuivant)
+![déclenchement CI de tests d'intégration](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci/alice-ci_lancementSuivant)
 
 
 
