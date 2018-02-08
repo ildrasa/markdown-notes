@@ -10,3 +10,4 @@ La gestion des droits unix est rarement abordée dans les fiches car ce n'est pa
 - [jenkins](https://github.com/ildrasa/markdown-notes/blob/master/jenkins.md)
 - [docker](https://github.com/ildrasa/markdown-notes/blob/master/docker.md)
 - [CI pour le projet Alice](https://github.com/ildrasa/markdown-notes/blob/master/alice-ci.md)
+- [CI pour les tests d'intégration du projet Alice](https://github.com/ildrasa/markdown-notes/blob/master/aliceIntTest-ci.md)
