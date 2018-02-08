@@ -11,6 +11,9 @@ La CI va :
 - créer une image docker avec un tomcat ayant le webservice installé et la stocke dans le docker registry local.
 - lancer la CI des tests d'intégration d'Alice.
 
+## Remarques
+Dans le projet alice, un test échoue; l'objectif est de faire jouer plus tard le mécanisme qui passe la CI en instable.
+
 ## Configuration
 
 ### General
@@ -31,7 +34,7 @@ Rien de particulier
 1. Le build comporte une invocation maven.
 Remarques: 
   - Comme le plugin nexus pour jenkins ne fonctionne pas avec nexus 3.x c'est la tâche deploy de maven qui envoie le war généré sur le nexus.
-  - L'option Dmaven.test.failure.ignore=true sert à ne pas arrêter la CI si les tests ne passent pas. Ce qui mettrai la CI broken, ce qui n'est pas le cas, l'appli est *fonctionnelle* mais instable... ou le test est juste incorrect, ça s'est déjà vu.
+  - L'option Dmaven.test.failure.ignore=true sert à ne pas arrêter la CI si les tests ne passent pas. Ce qui mettrai la CI broken, ce qui n'est pas le cas, l'appli est *fonctionnelle* mais instable... ou le test est juste incorrect, ça se serai déjà vu... 
 ![build maven](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci_maven)
 
 2. Le build comporte un script shell pour l'image docker qui servira aux tests d'intégration.
@@ -41,7 +44,7 @@ Remarques:
 1. Déploiement du war sur le serveur tomcat de démonstration
 ![tomcat deploy](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci_tomcat)
 
-2. On regarde le contenu de la console de sortie pour passer le build en instable (jaune) si les tests on échoués. Pour cela on cherche la ligne `[ERROR There are test failures.`
+2. On regarde le contenu de la console de sortie pour passer le build en instable (jaune) si les tests on échoués. Pour cela on cherche la ligne `[ERROR] There are test failures.`
 ![build jenkins text finder](https://github.com/ildrasa/markdown-notes/blob/master/images/alice-ci_textFinder)
 
 3. On lance la CI de tests d'intégration d'Alice. On la lance même si le build est instable (un test unitaire raté n'empêche pas de tester l'intégration avec les autres composants). Différence entre le métier interne et l'interraction avec l'environnement.
