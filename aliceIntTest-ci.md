@@ -17,15 +17,15 @@ Si l'on ne détruit pas le container docker on ne peut pas le re-créer avec le 
 ## Configuration
 
 ### General
-![onglet general](https://github.com/ildrasa/markdown-notes/blob/master/images/aliceIntTest/aliceIntTest-ci_general)
+![onglet general](https://github.com/ildrasa/markdown-notes/blob/master/images/aliceIntTest-ci/aliceIntTest-ci_general)
 
 ### Gestion des sources
 La source est le repository GitHub des tests d'intégration d'Alice
-![onglet gestion des sources](https://github.com/ildrasa/markdown-notes/blob/master/images/aliceIntTest/aliceIntTest-ci_sources)
+![onglet gestion des sources](https://github.com/ildrasa/markdown-notes/blob/master/images/aliceIntTest-ci/aliceIntTest-ci_sources)
 
 ### Déclenchement du build
 Le build est déclenché si on a commité sur le repo GitHub dans les 5 dernières minutes ou si la CI *alice* s'est déroulé, même si elle est instable car on veut une liste exhaustive des problèmes sur Alice. 
-![onglet déclenchement du build](https://github.com/ildrasa/markdown-notes/blob/master/images/aliceIntTest/aliceIntTest-ci_declenchement)
+![onglet déclenchement du build](https://github.com/ildrasa/markdown-notes/blob/master/images/aliceIntTest-ci/aliceIntTest-ci_declenchement)
 
 ### Environnement de build
 Rien de particulier
