@@ -26,3 +26,11 @@ Avec jenkins on va utiliser un registry pour stocker les images des machines uti
 ```shell
 docker run -d -p 5000:5000 --restart=always --name registry registry:2
 ```
+
+## Rajouter docker-compose
+Installation de curl, docker compose et rajout des droits d'éxécution pour docker-compose
+```shell
+apt-get install -y curl
+curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+```
