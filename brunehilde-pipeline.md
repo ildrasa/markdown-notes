@@ -4,7 +4,7 @@
 ## Description
 Ceci est la description du pipeline jenkins pour Brunehilde et ses tests d'intégration
 Les sources de Brunehilde sont [ici](https://github.com/ildrasa/BrunehildePythonApp).
-Les sources des tests d'intégration d'Alice sont [ici](https://github.com/ildrasa/BrunehildeIntegrationTests).
+Les sources des tests d'intégration de Brunehilde sont [ici](https://github.com/ildrasa/BrunehildeIntegrationTests).
 
 Le pipeline va :
 - créer une image docker avec python et les librairies pour le service et la stocke dans le docker registry local.
