@@ -12,3 +12,4 @@ La gestion des droits unix est rarement abordée dans les fiches car ce n'est pa
 - [CI pour le projet Alice](https://github.com/ildrasa/markdown-notes/blob/master/alice-ci.md)
 - [CI pour les tests d'intégration du projet Alice](https://github.com/ildrasa/markdown-notes/blob/master/aliceIntTest-ci.md)
 - [Pipeline jenkins pour Alice](https://github.com/ildrasa/markdown-notes/blob/master/alice-pipeline.md)
+- [Pipeline jenkins pour Brunehilde (example d'utilisation de docker-compose)](https://github.com/ildrasa/markdown-notes/blob/master/brunehilde-pipeline.md)
