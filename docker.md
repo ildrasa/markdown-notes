@@ -34,3 +34,18 @@ apt-get install -y curl
 curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ```
+
+## Docker volumes
+Créer un volume:
+```shell
+docker volume create <monVolume-sansEspace>
+```
+Petit script pour avoir un volume et son path dans une variable:
+```shell
+VOLUME_PATH=$(docker volume inspect --format '{{ .Mountpoint }}' <monVolume-sansEspace>)
+if [[ -z "$VOLUME_PATH" ]]; then
+	docker volume create <monVolume-sansEspace>
+	VOLUME_PATH=$(docker volume inspect --format '{{ .Mountpoint }}' <monVolume-sansEspace>)
+	echo $VOLUME_PATH
+fi
+```
