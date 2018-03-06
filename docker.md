@@ -35,6 +35,19 @@ curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compos
 chmod +x /usr/local/bin/docker-compose
 ```
 
+## Docker images
+Build d'une image docker à partir d'un dockerfile spécifique (option-f).
+```shell
+docker build -f nodegl-dockerfile -t nodegl:CI .
+```
+Petit bout script utile pour ne build une image que si elle n'a jamais été build.
+```shell
+if [[ "$(docker images -q <nomDeLImage>:<TAG> 2> /dev/null)" == "" ]]; then
+	echo "docker image <nomDeLImage>:<TAG> not built yet; will be built"
+	docker build -f <specificDockerfile> -t <nomDeLImage>:<TAG> .
+fi
+```
+
 ## Docker volumes
 Créer un volume:
 ```shell
